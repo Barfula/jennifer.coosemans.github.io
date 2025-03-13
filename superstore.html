@@ -90,10 +90,10 @@
         <h2>Project Overview</h2>
         <p>This analysis examines sales data from a fictional superstore to:</p>
         <ul>
-            <li>Identify seasonal sales patterns</li>
+            <li>Identify shopping patterns in frequency and quantity</li>
+            <li>Assess sales trend over time (is the store's sales increasing?)</li>
+            <li>Compare relative sales by region</li>
             <li>Analyze product category performance</li>
-            <li>Optimize inventory management</li>
-            <li>Improve customer segmentation</li>
         </ul>
     </div>
 
@@ -156,7 +156,7 @@
         </div>
         <div class="code-snippet">
             # Generate quantity distribution<br>
-           plt.hist(df['Quantity'], bins=14, edgecolor='black', alpha=0.7, color='tab:blue')<br>
+            plt.hist(df['Quantity'], bins=14, edgecolor='black', alpha=0.7, color='tab:blue')<br>
             plt.title('Purchase Frequency over Quantity')<br>
             plt.xlabel('Quantity')<br>
             plt.ylabel('Frequency')<br>
@@ -187,6 +187,7 @@
             <li>15% average annual growth rate</li>
             <li>2017 sales totaled $484k (peak year)</li>
             <li>Q4 consistently strongest quarter (35% of annual sales)</li>
+            <li>The graph shows sales have been steadily rising YoY since 2015!</li>
         </ul>
     </div>
 
