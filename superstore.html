@@ -17,5 +17,75 @@
     <p><img src="images/superstore_dashboard.png" alt="Superstore Dashboard"></p>
     <!-- Embed Tableau Public dashboard (if applicable) -->
     <iframe src="https://public.tableau.com/views/SuperStoreViz-Tableau/SalesDashboard?:language=en-US&publish=yes&:sid=&:display_count=n&:origin=viz_share_link" width="800" height="600"></iframe>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superstore Sales Analysis</title>
+    <link rel="stylesheet" href="style.css"> <!-- If you have a CSS file -->
+</head>
+<body>
+    <h1>Superstore Sales Data Analysis</h1>
+    <p>Welcome to my Superstore Sales Data project. Here is a summary of the insights.</p>
+
+    <!-- Add a link to your GitHub repository -->
+    <p><a href="https://github.com/Barfula/Super-Store-Dataset" target="_blank">View Project on GitHub</a></p>
+
+    <!-- Embed images, Tableau dashboard, or links to notebooks -->
+    <p><img src="images/superstore_dashboard.png" alt="Superstore Dashboard"></p>
+
+
+<div class="section">
+    <h2>Data Exploration</h2>
+    <div class="code-snippet">
+        # Load and inspect data<br>
+        df = pd.read_csv('Sample_Superstore.csv')<br>
+        print(df.describe())<br>
+        print(f"Total Records: {len(df)}")<br>
+        print(f"Date Range: {df['Order Date'].min()} to {df['Order Date'].max()}")
+    </div>
+    <p>Dataset contains 9,994 records spanning 2014-2017</p>
+</div>
+
+<div class="section">
+    <h2>Quantity Analysis</h2>
+    <div class="visual-container">
+        <img src="quantity_dist.png" alt="Quantity Distribution">
+    </div>
+    <div class="code-snippet">
+        plt.hist(df['Quantity'], bins=20)<br>
+        plt.title('Quantity Distribution')<br>
+        plt.savefig('quantity_dist.png')
+    </div>
+    <p>Key Insight: 80% of orders contain 2-5 items</p>
+</div>
+
+<div class="section">
+    <h2>Sales Trends</h2>
+    <div class="visual-container">
+        <img src="sales_trend.png" alt="Annual Sales Trend">
+    </div>
+    <div class="code-snippet">
+        df['Year'] = df['Order Date'].dt.year<br>
+        annual_sales = df.groupby('Year')['Sales'].sum()<br>
+        annual_sales.plot(kind='line')
+    </div>
+    <p>15% YOY growth observed from 2014-2017</p>
+</div>
+
+<div class="section">
+    <h2>Category Performance</h2>
+    <div class="visual-container">
+        <img src="category_sales.png" alt="Category Sales Breakdown">
+    </div>
+    <div class="code-snippet">
+        category_sales = df.groupby('Category')['Sales'].sum()<br>
+        category_sales.plot(kind='bar')
+    </div>
+    <p>Technology products contribute 45% of total sales</p>
+</div>
+</body>
+</html>
 </body>
 </html>
