@@ -83,7 +83,7 @@
 <body>
     <div class="header">
         <h1>Superstore Sales Performance Analysis</h1>
-        <p>A comprehensive analysis of sales data from 2014-2017 to identify trends and optimize business strategies</p>
+        <p>Analysis of sales data from 2014-2017 to identify trends and optimize business strategies</p>
     </div>
  <!-- Add a link to your GitHub repository -->
     <p><a href="https://github.com/Barfula/Super-Store-Dataset" target="_blank">View Project on GitHub</a></p>
@@ -131,8 +131,6 @@
         <div class="code-snippet">
             # Load dataset<br>
             df = pd.read_csv('Sample_Superstore.csv', encoding='latin-1')<br>
-            print(f"Dataset shape: {df.shape}")<br>
-            print(f"Columns: {df.columns.tolist()}")
         </div>
     </div>
 
@@ -142,7 +140,6 @@
             # Clean and transform data<br>
             df['Order Date'] = pd.to_datetime(df['Order Date'])<br>
             df['Year'] = df['Order Date'].dt.year<br>
-            df['Profit Margin'] = df['Profit'] / df['Sales']<br>
             df = df.dropna()  # Remove missing values
         </div>
         <p>Key transformations:</p>
@@ -170,8 +167,8 @@
         </div>
         <h3>Key Findings</h3>
         <ul>
-            <li>80% of orders contain 2-5 items</li>
-            <li>Bulk orders (>10 items) represent only 2% of total</li>
+            <li>Most (80%) orders contain 2-5 items</li>
+            <li>Bulk orders (of >10 items) are rare at this store</li>
             <li>Average order size: 3.8 items</li>
         </ul>
     </div>
@@ -229,9 +226,9 @@
         </div>
         <h3>Key Findings</h3>
         <ul>
-            <li>Technology products lead with 45% of total sales</li>
-            <li>Office supplies have highest profit margin (28%)</li>
-            <li>Furniture sales show lowest growth rate (8% YoY)</li>
+            <li>Technology products made up the highest portion of total sales</li>
+            <li>Furniture sales made up the second highest portion of total sales</li>
+            <li>Office supplies made up the lowest portion of total sales</li>
         </ul>
     </div>
 </body>
